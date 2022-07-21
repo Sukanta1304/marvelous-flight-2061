@@ -1,7 +1,9 @@
 
+
 import React from 'react'
 import Drawercomponent from './Chakracomponent/Drawer'
-import BrandIcon from './Icons/BrandIcon'
+import BrandIcon from './Icons/BrandIcon';
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -11,9 +13,9 @@ const Navbar = () => {
       <BrandIcon/>
       <div style={{marginLeft:"600px"}}>
         <ul style={{display:"flex" , gap:"5rem" , listStyleType:"none", justifyContent:"space-between" , fontFamily:"sans-serif" , fontWeight:"900" , marginTop:"30px"}}>
-          <li>Become a host</li>
-          <li>ZMS</li>
-          <li>Login/Signup</li>
+          <li><Link to="/becomeahost">Become a host</Link></li>
+          <li><Link to="/zms">ZMS</Link></li>
+          <li><Link to="/login">Login/Signup</Link></li>
         </ul>
       </div>
     </div>
