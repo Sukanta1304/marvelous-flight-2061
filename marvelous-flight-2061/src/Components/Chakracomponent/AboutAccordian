@@ -1,0 +1,36 @@
+import React from 'react' ;
+import {
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+    Box,
+  } from '@chakra-ui/react'
+
+const AboutAccordian = () => {
+  return (
+    <div>
+        <Accordion defaultIndex={[0]} allowMultiple>
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='lcenter'>
+          About us
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+      <h3><a href="https://www.zoomcar.com/about">Zoomcar Team</a> </h3>
+      <h3><a href="https://www.zoomcar.com/zap">Zoomcar Subscription</a></h3>
+      <h3><a href="http://www.zoomcar.com/blog/">Zoomcar Blog</a> </h3>
+      <h3><a href="https://www.zoomcar.com/careers">Careers @ Zoomcar</a></h3>
+    </AccordionPanel>
+  </AccordionItem>
+</Accordion>
+    </div>
+  )
+}
+
+export default AboutAccordian
