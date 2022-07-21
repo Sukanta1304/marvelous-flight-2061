@@ -13,6 +13,7 @@ import Becomeahost from './Pages/Becomeahost'
 import Login from './Pages/Login'
 import ZMS from './Pages/ZMS'
 import { Route, Routes } from 'react-router-dom'
+import Otp from './Pages/Otp'
 
 
 function App() {
@@ -24,10 +25,10 @@ function App() {
                 <Route path="/becomeahost" element={<Becomeahost/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/zms" element={<ZMS/>}/>
+                <Route path="/otp" element={<Otp/>}/>
       </Routes>
     </div>
   )
 }
 
 export default App
-
