@@ -6,20 +6,28 @@ import Roundtrip from './Components/Roundtrip'
 import SelectModal from './Components/Chakracomponent/SelectModal'
 import { Button } from '@chakra-ui/react'
 import { ImageSection } from './Components/ImageSection'
+import AboutAccordian from './Components/Chakracomponent/AboutAccordian'
+import TextSection from './Components/TextSection'
+import Home from './Pages/Home'
+import Becomeahost from './Pages/Becomeahost'
+import Login from './Pages/Login'
+import ZMS from './Pages/ZMS'
+import { Route, Routes } from 'react-router-dom'
 
 
 function App() {
 
   return (
     <div>
-      <Navbar/>
-      <Roundtrip/>
-      <div style={{marginTop:"-300px" , marginLeft:"-350px"}}>
-        <SelectModal/>
-      </div>
-      <ImageSection/>
+      <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/becomeahost" element={<Becomeahost/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/zms" element={<ZMS/>}/>
+      </Routes>
     </div>
   )
 }
 
 export default App
+
