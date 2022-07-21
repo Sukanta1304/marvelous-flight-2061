@@ -1,0 +1,12 @@
+import React from 'react'
+import Text from '../assets/Text.jpg'
+
+const TextSection = () => {
+  return (
+    <div style={{marginTop:"20px" , marginLeft:"100px"}}>
+        <img src={Text} alt="" />
+    </div>
+  )
+}
+
+export default TextSection
