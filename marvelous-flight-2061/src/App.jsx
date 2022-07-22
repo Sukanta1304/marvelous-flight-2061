@@ -14,6 +14,7 @@ import Login from './Pages/Login'
 import ZMS from './Pages/ZMS'
 import { Route, Routes } from 'react-router-dom'
 import Otp from './Pages/Otp'
+import Profile from './Pages/Profile'
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/zms" element={<ZMS/>}/>
                 <Route path="/otp" element={<Otp/>}/>
+                <Route path = "/profile" element={<Profile/>}/>
+                <Route path="/changecity" element={<SelectModal/>}/>
       </Routes>
     </div>
   )
