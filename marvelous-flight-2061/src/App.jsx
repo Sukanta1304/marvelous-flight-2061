@@ -1,13 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import './App.css'
-import Navbar from './Components/Navbar'
-import Roundtrip from './Components/Roundtrip'
+
 import SelectModal from './Components/Chakracomponent/SelectModal'
-import { Button } from '@chakra-ui/react'
-import { ImageSection } from './Components/ImageSection'
-import AboutAccordian from './Components/Chakracomponent/AboutAccordian'
-import TextSection from './Components/TextSection'
+
 import Home from './Pages/Home'
 import Becomeahost from './Pages/Becomeahost'
 import Login from './Pages/Login'
@@ -15,6 +10,10 @@ import ZMS from './Pages/ZMS'
 import { Route, Routes } from 'react-router-dom'
 import Otp from './Pages/Otp'
 import Profile from './Pages/Profile'
+import Findcar from './Pages/Findcar'
+import Checkout from './Pages/Checkout'
+import Success from './Pages/Success'
+import Startpoint from './Pages/Startpoint'
 
 
 function App() {
@@ -29,6 +28,11 @@ function App() {
                 <Route path="/otp" element={<Otp/>}/>
                 <Route path = "/profile" element={<Profile/>}/>
                 <Route path="/changecity" element={<SelectModal/>}/>
+                <Route path="/findcars" element={<Findcar/>}/>
+                <Route path="/checkout" element={<Checkout/>}/>
+                <Route path="/success" element={<Success/>}/>
+                <Route path="/startpoint" element={<Startpoint/>}/>
+
       </Routes>
     </div>
   )

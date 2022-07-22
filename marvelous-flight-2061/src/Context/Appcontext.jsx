@@ -7,7 +7,8 @@ const AppcontextProvider = ({ children }) => {
     name: "",
     email: "",
     mobile:"",
-    city:"Kolkata"
+    city:"Kolkata",
+    startpoint:""
   });
   return (
     <Appcontext.Provider value={[data, setData]}>
