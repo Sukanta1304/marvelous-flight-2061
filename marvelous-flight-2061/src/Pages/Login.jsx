@@ -1,14 +1,30 @@
 import { Button, Input } from '@chakra-ui/react'
-import React from 'react';
+import React, { useContext } from 'react';
 import {Link, useNavigate} from 'react-router-dom' ;
+import { Appcontext } from '../Context/Appcontext';
 
 const Login = () => {
+    const [data, setData] = useContext(Appcontext);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value
+    });
+  };
 
     const navigate= useNavigate() ;
 
     const handleRegister=()=>{
-        navigate("/otp")
-    }
+        if(data.name=="" || data.email=="" || data.mobile.length<10){
+            alert("Please provide correct credential")
+        }
+        else{
+            navigate("/otp")
+        }
+       
+    };
+
   return (
     <div>
         Login <br />
@@ -21,12 +37,22 @@ const Login = () => {
             <div style={{display:"flex" , gap:"1rem" , textAlign:"center" ,  alignItems:"center" , marginTop:"10px"}}>
                 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png" width="35px" height="10px" alt="" />
                 <h1>+91|</h1>
-                <Input placeholder='Enter Mobile Number'/>
+                <Input placeholder='Enter Mobile Number'
+                 name="mobile"
+                 onChange={handleChange}
+                 isInvalid
+                />
             </div>
             <div>
                 <br />
-                <Input placeholder='Enter Email ID'/>
-                <Input placeholder='Enter Full Name'/>
+                <Input placeholder='Enter Email ID'
+                   name="email"
+                   onChange={handleChange}
+                />
+                <Input placeholder='Enter Full Name'
+                 name="name"
+                 onChange={handleChange}
+                />
                 <Button onClick={handleRegister} variant="solid" bgColor="green.300">Submit</Button>
                 </div>
             <div style={{marginTop:"15px" ,padding:"15px" , borderTop:"1px solid gray" , borderBottom:"1px solid gray" , textAlign:"left" , }}>
