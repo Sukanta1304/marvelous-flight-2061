@@ -12,6 +12,7 @@ import {
     useDisclosure,
     Input,
   } from '@chakra-ui/react'
+import Profile from '../../Pages/Profile'
 const Drawercomponent = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef() ;
@@ -32,7 +33,7 @@ const Drawercomponent = () => {
           <DrawerHeader>Create your account</DrawerHeader>
 
           <DrawerBody>
-            <Input placeholder='Type here...' />
+            <Profile/>
           </DrawerBody>
 
           <DrawerFooter>
