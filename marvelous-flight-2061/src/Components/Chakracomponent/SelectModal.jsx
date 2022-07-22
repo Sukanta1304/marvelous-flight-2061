@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {ArrowBackIcon } from '@chakra-ui/icons'
 import {
     Modal,
     ModalOverlay,
@@ -13,8 +14,18 @@ import {
     Heading,
   } from '@chakra-ui/react';
   import {ChevronDownIcon} from '@chakra-ui/icons';
+import { Appcontext } from '../../Context/Appcontext';
+import { Link } from 'react-router-dom';
 
 const SelectModal = () => {
+  const [data, setData] = useContext(Appcontext);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value
+    });
+  };
     const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <div>
@@ -23,9 +34,10 @@ const SelectModal = () => {
 <Modal isOpen={isOpen} onClose={onClose}>
   <ModalOverlay />
   <ModalContent>
-    <ModalHeader>Modal Title</ModalHeader>
+    <ModalHeader></ModalHeader>
     <ModalCloseButton />
     <ModalBody>
+      <Link to="/"><ArrowBackIcon/></Link>
     <Heading as='h2' size='md' noOfLines={1}>
     Select your pick up country/city
   </Heading>
@@ -37,7 +49,7 @@ const SelectModal = () => {
       <option value="Vietnam">Vietnam</option>
      </Select>
      <br />
-     <Select>
+     <Select name="city" onChange={handleChange}>
       <option value="Kolkata">Kolkata</option>
       <option value="Mumbai">Mumbai</option>
       <option value="Delhi">Delhi</option>
