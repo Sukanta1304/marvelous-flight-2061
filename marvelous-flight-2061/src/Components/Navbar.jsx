@@ -17,7 +17,7 @@ const Navbar = () => {
         <ul style={{display:"flex" , gap:"5rem" , listStyleType:"none", justifyContent:"space-between" , fontFamily:"sans-serif" , fontWeight:"900" , marginTop:"30px"}}>
           <li><Link to="/becomeahost">Become a host</Link></li>
           <li><Link to="/zms">ZMS</Link></li>
-          <li><Link to={data.name.length<1?"/login":"/profile"}>{data.name.length<1?"Login/Signup": data.name}</Link></li>
+          <li><Link to={(data.name==""|| data.email==""|| data.mobile=="")?"/login":"/profile"}>{(data.name!==""&& data.email!==""&& data.mobile!=="")?data.name:"Login/Signup"}</Link></li>
         </ul>
       </div>
     </div>
