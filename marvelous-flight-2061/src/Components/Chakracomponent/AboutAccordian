@@ -11,7 +11,7 @@ import {
 const AboutAccordian = () => {
   return (
     <div>
-        <Accordion defaultIndex={[0]} allowMultiple>
+        <Accordion allowToggle>
   <AccordionItem>
     <h2>
       <AccordionButton>
